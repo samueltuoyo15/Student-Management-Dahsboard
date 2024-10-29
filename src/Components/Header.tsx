@@ -3,7 +3,7 @@ import {GrCircleInformation} from 'react-icons/gr'
 import {GoEye} from 'react-icons/go'
 function Header(){
   return(
-    <header className="select-none z-10 bg-white p-4 text-black flex justify-between items-center shadow text-lg">
+    <header className="w-full select-none z-10 bg-white p-4 text-gray-500 flex justify-between items-center shadow text-lg">
       <div>
         <FaArrowLeft className="inline mr-2" /> <span className="mr-20">Assessment</span>
         <span className="mr-5 font-bold">Primary 1.</span>
@@ -13,7 +13,7 @@ function Header(){
       <div>
        <span className="mr-5"> <GrCircleInformation className="inline mr-2" />Test Info</span>
        <span className="mr-5"><GoEye className="inline mr-2" />Test Preview</span>
-       <button className="bg-green-600 p-3 rounded inline text-white"><FaPlay className="inline mr-3" />Activate Test</button>
+       <button className="bg-green-500 p-3 rounded inline text-white"><FaPlay className="inline mr-3" />Activate Test</button>
      </div>
     </header>
    )
