@@ -1,51 +1,42 @@
-import {CiHome, CiSettings, CiFileOn, CiClock2, CiCircleList, CiGrid41} from 'react-icons/ci'
-import {LuFileCheck} from 'react-icons/lu'
-import {IoPieChartOutline} from 'react-icons/io5'
-import {BsBarChart} from 'react-icons/bs'
-import {NavLink} from 'react-router-dom'
-function Aside(){
-  return(
-    <aside className="select-none fixed top-26 left-0 h-full w-62 bg-white p-4 shadow text-gray-500 text-lg">
-     <h2 className="font-bold mb-5 text-lg">Test Configuration</h2>
-      <NavLink className="block mb-8">
-        <CiSettings className="inline mr-3" />
-        <span>Basic Settings</span>
-      </NavLink>
-       <NavLink to="/ProductManagerPage" className="block mb-8">
-        <CiCircleList className="inline mr-3" />
-        <span>Question Manager</span>
-      </NavLink>
-        <NavLink className="block mb-8">
-        <CiGrid41 className="inline mr-3 " />
-        <span>Question Settings</span>
-      </NavLink>
-       <NavLink className="block mb-8">
-        <CiHome className="inline mr-3" />
-        <span>Test Start Page</span>
-      </NavLink>
-       <NavLink className="block mb-8">
-        <CiClock2 className="inline mr-3" />
-        <span>Time Settings</span>
-      </NavLink>
-        <NavLink className="block mb-8">
-        <CiFileOn className="inline mr-3" />
-        <span>Grading and Summary</span>
-      </NavLink>
-      <h2 className="font-bold mb-5 text-lg">Test progress and results </h2>
-       <NavLink className="block mb-8 mt-4">
-        <BsBarChart className="inline mr-3" />
-        <span>Test Results</span>
-      </NavLink>
-       <NavLink className="block mb-8">
-        <LuFileCheck className="inline mr-3" />
-        <span>Test Sheets and review</span>
-      </NavLink>
-        <NavLink to="/" className="block mb-8 bg-green-100 py-2 px-1 rounded">
-        <IoPieChartOutline className="inline mr-3" />
-        <span>Statistics</span>
-      </NavLink>
+import { CiHome, CiSettings, CiFileOn, CiClock2, CiCircleList, CiGrid41 } from 'react-icons/ci'
+import { LuFileCheck } from 'react-icons/lu'
+import { IoPieChartOutline } from 'react-icons/io5'
+import { BsBarChart } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
+
+function Aside() {
+  const navLinks = [
+    { to: '/', icon: CiSettings, label: 'Basic Settings' },
+    { to: '/ProductManagerPage', icon: CiCircleList, label: 'Question Manager' },
+    { to: '/', icon: CiGrid41, label: 'Question Settings' },
+    { to: '/', icon: CiHome, label: 'Test Start Page' },
+    { to: '/', icon: CiClock2, label: 'Time Settings' },
+    { to: '/', icon: CiFileOn, label: 'Grading and Summary' },
+    { sectionTitle: 'Test progress and results', extraClass: 'mt-5' },
+    { to: '/', icon: BsBarChart, label: 'Test Results', extraClass: 'mt-4' },
+    { to: '/', icon: LuFileCheck, label: 'Test Sheets and review' },
+    { to: '/', icon: IoPieChartOutline, label: 'Statistics' },
+  ]
+
+  return (
+    <aside className="font-sans select-none float-left w-64 h-max bg-white p-4 shadow text-gray-500 text-lg">
+      <h2 className="font-bold mb-5 text-lg">Test Configuration</h2>
+      {navLinks.map((link, index) =>
+        link.sectionTitle ? (
+          <h2 key={index} className={`font-bold mb-5 text-lg ${link.extraClass}`}>{link.sectionTitle}</h2>
+        ) : (
+          <Link
+            key={index}
+            to={link.to}
+            className="block py-2 px-1 rounded hover:bg-green-100"
+          >
+            <link.icon className="inline mr-3" />
+            <span>{link.label}</span>
+          </Link>
+        )
+      )}
     </aside>
-   )
+  )
 }
 
-export default Aside
+export default Aside 
