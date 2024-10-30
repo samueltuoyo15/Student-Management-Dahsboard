@@ -27,10 +27,10 @@ function Aside() {
         ) : (
           <Link
             key={index}
-            to={link.to || '/'}  // Fallback for `to` if undefined
+            to={link.to || '/'}  
             className="block py-2 px-1 rounded hover:bg-green-100"
           >
-            {link.icon && <link.icon className="inline mr-3" />}  {/* Only render if `icon` exists */}
+            {link.icon && <link.icon className="inline mr-3" />} 
             <span>{link.label}</span>
           </Link>
         )
