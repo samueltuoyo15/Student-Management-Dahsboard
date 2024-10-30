@@ -41,7 +41,6 @@ function ProductManagerPage(){
     <input type="radio" name="answer" /> <span>Answer option 4</span>
   </li>
 </ul>
-
     </div>
  </section>
 
