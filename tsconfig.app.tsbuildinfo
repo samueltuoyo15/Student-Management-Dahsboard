@@ -1,1 +1,1 @@
-{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/Components/Aside.tsx","./src/Components/Dashboard.tsx","./src/Components/Header.tsx","./src/Pages/DatavisualizationPage.tsx"],"errors":true,"version":"5.6.3"}
+{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/Components/Aside.tsx","./src/Components/Dashboard.tsx","./src/Components/Header.tsx","./src/Pages/DatavisualizationPage.tsx","./src/Pages/ProductManagerPage.tsx"],"version":"5.6.3"}

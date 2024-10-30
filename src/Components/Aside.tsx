@@ -23,14 +23,14 @@ function Aside() {
       <h2 className="font-bold mb-5 text-lg">Test Configuration</h2>
       {navLinks.map((link, index) =>
         link.sectionTitle ? (
-          <h2 key={index} className={`font-bold mb-5 text-lg ${link.extraClass}`}>{link.sectionTitle}</h2>
+          <h2 key={index} className={`font-bold mb-5 text-lg ${link.extraClass || ''}`}>{link.sectionTitle}</h2>
         ) : (
           <Link
             key={index}
-            to={link.to}
+            to={link.to || '/'}  // Fallback for `to` if undefined
             className="block py-2 px-1 rounded hover:bg-green-100"
           >
-            <link.icon className="inline mr-3" />
+            {link.icon && <link.icon className="inline mr-3" />}  {/* Only render if `icon` exists */}
             <span>{link.label}</span>
           </Link>
         )
@@ -39,4 +39,4 @@ function Aside() {
   )
 }
 
-export default Aside 
+export default Aside
