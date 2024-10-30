@@ -13,7 +13,7 @@ function Header(){
       <div>
        <span className="mr-5"> <GrCircleInformation className="inline mr-2" />Test Info</span>
        <span className="mr-5"><GoEye className="inline mr-2" />Test Preview</span>
-       <button className="bg-green-500 p-3 rounded inline text-white"><FaPlay className="inline mr-3" />Activate Test</button>
+       <button className="bg-green-500 text-sm p-3 rounded inline text-white"><FaPlay className="inline mr-3 text-lg" />Activate Test</button>
      </div>
     </header>
    )
