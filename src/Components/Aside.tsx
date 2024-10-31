@@ -2,19 +2,19 @@ import { CiHome, CiSettings, CiFileOn, CiClock2, CiCircleList, CiGrid41 } from '
 import { LuFileCheck } from 'react-icons/lu'
 import { IoPieChartOutline } from 'react-icons/io5'
 import { BsBarChart } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function Aside() {
   const navLinks = [
-    { to: '/', icon: CiSettings, label: 'Basic Settings' },
+    { to: '#', icon: CiSettings, label: 'Basic Settings' },
     { to: '/ProductManagerPage', icon: CiCircleList, label: 'Question Manager' },
-    { to: '/', icon: CiGrid41, label: 'Question Settings' },
-    { to: '/', icon: CiHome, label: 'Test Start Page' },
-    { to: '/', icon: CiClock2, label: 'Time Settings' },
-    { to: '/', icon: CiFileOn, label: 'Grading and Summary' },
+    { to: '#', icon: CiGrid41, label: 'Question Settings' },
+    { to: '#', icon: CiHome, label: 'Test Start Page' },
+    { to: '#', icon: CiClock2, label: 'Time Settings' },
+    { to: '#', icon: CiFileOn, label: 'Grading and Summary' },
     { sectionTitle: 'Test progress and results', extraClass: 'mt-5' },
-    { to: '/', icon: BsBarChart, label: 'Test Results', extraClass: 'mt-4' },
-    { to: '/', icon: LuFileCheck, label: 'Test Sheets and review' },
+    { to: '#', icon: BsBarChart, label: 'Test Results', extraClass: 'mt-4' },
+    { to: '#', icon: LuFileCheck, label: 'Test Sheets and review' },
     { to: '/', icon: IoPieChartOutline, label: 'Statistics' },
   ]
 
@@ -25,14 +25,17 @@ function Aside() {
         link.sectionTitle ? (
           <h2 key={index} className={`font-bold mb-5 text-lg ${link.extraClass || ''}`}>{link.sectionTitle}</h2>
         ) : (
-          <Link
+          <NavLink
             key={index}
-            to={link.to || '/'}  
-            className="block py-2 px-1 rounded hover:bg-green-100"
+            to={link.to as string}
+            className={({ isActive }) =>
+              `block rounded hover:bg-green-100 ${isActive && link.to !== '#' ? 'bg-green-100 p-2' : 'py-2 px-1'}`
+            }
+            onClick={(e) => link.to === '#' && e.preventDefault()}
           >
-            {link.icon && <link.icon className="inline mr-3" />} 
+            {link.icon && <link.icon className="inline mr-3" />}
             <span>{link.label}</span>
-          </Link>
+          </NavLink>
         )
       )}
     </aside>
