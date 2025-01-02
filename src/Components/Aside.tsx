@@ -19,7 +19,7 @@ function Aside() {
   ]
 
   return (
-    <aside className="hidden md:fixed font-sans select-none w-64 h-full bg-white p-4 shadow text-gray-500 text-lg">
+    <aside className="hidden block md:fixed font-sans select-none w-64 h-full bg-white p-4 shadow text-gray-500 text-lg">
       <h2 className="font-bold mb-5 text-lg">Test Configuration</h2>
       {navLinks.map((link, index) =>
         link.sectionTitle ? (

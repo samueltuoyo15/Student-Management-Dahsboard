@@ -31,7 +31,7 @@ function Dashboard() {
   }, [])
 
   return (
-    <main className="font-sans select-none fixed left-60 z-10 p-4 text-gray-500 text-lg">
+    <main className="font-sans select-none fixed md:left-60 z-10 p-4 text-gray-500 text-lg">
       <IoPieChartOutline className="text-2xl font-bold inline ml-2 mr-2" />
       <span className="font-bold text-2xl">Class Performance Statistics</span>
       <div className="grid p-4 grid-cols-3 gap-5">
